@@ -1,12 +1,10 @@
 # EMACS KEYBINDINGS
 bindkey -e
 
-
 # SHELL HISTORY
 HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=$HOME/.zsh_history
-
 
 # SPACESHIP-PROMPT
 SPACESHIP_PROMPT_ORDER=(
@@ -30,19 +28,15 @@ SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
 source "$(pwd -P)/spaceship/spaceship.zsh"
 
-
 # SYNTAX HIGHLIGHTING
 source "$(pwd -P)/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
 
 # AUTOSUGGESTIONS
 source "$(pwd -P)/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
-
 # COMPLETIONS
 autoload -Uz compinit
 compinit
-
 
 # GIT
 function __git_prompt_git() {
@@ -50,11 +44,11 @@ function __git_prompt_git() {
 }
 function git_current_branch() {
   local ref
-  ref=$(__git_prompt_git symbolic-ref --quiet HEAD 2> /dev/null)
+  ref=$(__git_prompt_git symbolic-ref --quiet HEAD 2>/dev/null)
   local ret=$?
   if [[ $ret != 0 ]]; then
-    [[ $ret == 128 ]] && return  # no git repo.
-    ref=$(__git_prompt_git rev-parse --short HEAD 2> /dev/null) || return
+    [[ $ret == 128 ]] && return # no git repo.
+    ref=$(__git_prompt_git rev-parse --short HEAD 2>/dev/null) || return
   fi
   echo ${ref#refs/heads/}
 }
@@ -112,20 +106,17 @@ alias gcb='git checkout -b'
 alias gcB='git checkout -B'
 alias gfa='git fetch --all --tags --prune'
 
-
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # PNPM
 export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-
 
 # ZOXIDE
 export PATH=$HOME/.local/bin:$PATH
