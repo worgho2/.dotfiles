@@ -1,14 +1,11 @@
-[submodule "spaceship-prompt"]
-	path = spaceship-prompt
-	url = https://github.com/spaceship-prompt/spaceship-prompt.git
-	branch = master
+[submodule "src/.zsh/spaceship-prompt"]
+path = src/.zsh/spaceship-prompt
+url = https://github.com/spaceship-prompt/spaceship-prompt.git
 
-[submodule "zsh-syntax-highlighting"]
-	path = zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-	branch = master
+[submodule "src/.zsh/zsh-syntax-highlighting"]
+path = src/.zsh/zsh-syntax-highlighting
+url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 
-[submodule "zsh-autosuggestions"]
-	path = zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
-	branch = master
+[submodule "src/.zsh/zsh-autosuggestions"]
+path = src/.zsh/zsh-autosuggestions
+url = https://github.com/zsh-users/zsh-autosuggestions.git

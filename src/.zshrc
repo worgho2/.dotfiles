@@ -26,13 +26,13 @@ SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
-source "$(pwd -P)/spaceship/spaceship.zsh"
+source "$(pwd -P)/src/.zsh/spaceship-prompt/spaceship.zsh"
 
 # SYNTAX HIGHLIGHTING
-source "$(pwd -P)/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$(pwd -P)/src/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # AUTOSUGGESTIONS
-source "$(pwd -P)/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$(pwd -P)/src/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # COMPLETIONS
 autoload -Uz compinit
