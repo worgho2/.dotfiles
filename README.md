@@ -18,6 +18,13 @@ This repository is specifically designed for **Kubuntu 24.04** running **KDE Pla
 
 ## Installation
 
+0. Install system wide dependencies:
+
+```shell
+sudo apt update
+sudo apt install curl zsh
+```
+
 1. Clone the repository including all submodules
 
 ```shell
