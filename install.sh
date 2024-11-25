@@ -15,20 +15,13 @@ error_log() {
 }
 
 sync_config_file() {
-    # If $2 exits, then create a backup of the file
     if [ -f $2 ]; then
         local BAK_FILENAME="$2.$(date +%s).bak"
         info_log "Backing up $2 to $BAK_FILENAME"
-        mv $2 $BAK_FILENAME
-    fi
-
-    # If $2 is a symlink, then remove it
-    if [ -L $2 ]; then
-        info_log "Removing symlink $2"
+        cp -L $2 $BAK_FILENAME
         rm $2
     fi
 
-    # Create a symlink to $1
     info_log "Creating symlink $2 -> $1"
     ln -s $1 $2
 }
@@ -64,16 +57,16 @@ sync_config_file $DOTFILES_DIR/src/.config/kxkbrc $HOME/.config/kxkbrc
 # Add cedilla to en keyboard layout
 info_log "Adding cedilla to en keyboard layout..."
 if [ "$GTK_IM_MODULE" != "cedilla" ]; then
-    echo "GTK_IM_MODULE=cedilla" | tee -a /etc/environment
+    echo "GTK_IM_MODULE=cedilla" | sudo tee -a /etc/environment
 fi
 if [ "$QT_IM_MODULE" != "cedilla" ]; then
-    echo "QT_IM_MODULE=cedilla" | tee -a /etc/environment
+    echo "QT_IM_MODULE=cedilla" | sudo tee -a /etc/environment
 fi
 
 # Install nvm
 NVM_VERSION="v0.40.1"
 info_log "Installing nvm $NVM_VERSION..."
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
 
 # Install zoxide
 info_log "Installing zoxide..."
@@ -83,6 +76,6 @@ curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh 
 info_log "Installing pnpm..."
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 
-# Install zsh
+# Syncing zshrc
 info_log "Syncing zshrc..."
 sync_config_file $DOTFILES_DIR/src/.zshrc $HOME/.zshrc
