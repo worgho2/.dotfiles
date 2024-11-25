@@ -14,6 +14,7 @@ This repository is specifically designed for **Kubuntu 24.04** running **KDE Pla
 - nvm
 - pnpm
 - zoxide
+- kde plasma en.intl keyboard layout with mac-like shortcuts
 
 ## Installation
 
