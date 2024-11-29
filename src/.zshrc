@@ -6,9 +6,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=$HOME/.zsh_history
 
-# Get the directory of the versioned file
-ZSHRC_FILE=$(readlink -f "$0")
-ZSHRC_FILE_PATH=$(dirname "$ZSHRC_FILE")
+DOTFILES_DIR="$HOME/.dotfiles"
 
 # SPACESHIP-PROMPT
 SPACESHIP_PROMPT_ORDER=(
@@ -30,13 +28,13 @@ SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
-source "$ZSHRC_FILE_PATH/.zsh/spaceship-prompt/spaceship.zsh"
+source "$DOTFILES_DIR/src/.zsh/spaceship-prompt/spaceship.zsh"
 
 # SYNTAX HIGHLIGHTING
-source "$ZSHRC_FILE_PATH/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$DOTFILES_DIR/src/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # AUTOSUGGESTIONS
-source "$ZSHRC_FILE_PATH/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$DOTFILES_DIR/src/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 # COMPLETIONS
 autoload -Uz compinit

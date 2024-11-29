@@ -28,7 +28,7 @@ sudo apt install curl zsh
 1. Clone the repository including all submodules
 
 ```shell
-git clone --recurse-submodules git://github.com/worgho2/.dotfiles.git
+cd ~ && git clone --recurse-submodules git://github.com/worgho2/.dotfiles.git
 ```
 
 2. Open the repository root folder
