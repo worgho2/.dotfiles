@@ -1,3 +1,5 @@
 #!/bin/bash
 
-docker run --rm -it $(docker build -q .)
+docker build --progress=plain -t worgho2-dotfiles:test .
+
+docker run --rm -it worgho2-dotfiles:test

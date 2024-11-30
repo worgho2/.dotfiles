@@ -9,3 +9,7 @@ url = https://github.com/zsh-users/zsh-syntax-highlighting.git
 [submodule "src/.zsh/zsh-autosuggestions"]
 path = src/.zsh/zsh-autosuggestions
 url = https://github.com/zsh-users/zsh-autosuggestions.git
+
+[submodule "src/.oh-my-zsh"]
+path = src/.oh-my-zsh
+url = https://github.com/ohmyzsh/ohmyzsh.git

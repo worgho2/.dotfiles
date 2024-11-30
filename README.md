@@ -7,10 +7,10 @@ This repository is specifically designed for **Kubuntu 24.04** running **KDE Pla
 ## Features
 
 - zsh shell
-- zsh spaceship prompt
-- zsh autosuggestions extension
-- zsh syntax highlighting extension
-- git aliases (partial from oh-my-zsh)
+- zsh spaceship
+- zsh autosuggestions plugin
+- zsh syntax highlighting plugin
+- oh-my-zsh
 - nvm
 - pnpm
 - zoxide
@@ -22,19 +22,19 @@ This repository is specifically designed for **Kubuntu 24.04** running **KDE Pla
 
 ```shell
 sudo apt update
-sudo apt install curl zsh
+sudo apt install curl zsh git
 ```
 
 1. Clone the repository including all submodules
 
 ```shell
-cd ~ && git clone --recurse-submodules git://github.com/worgho2/.dotfiles.git
+git clone --recurse-submodules git://github.com/worgho2/.dotfiles.git ~/.dotfiles
 ```
 
 2. Open the repository root folder
 
 ```
-cd .dotfiles
+cd ~/.dotfiles
 ```
 
 3. Make de install script executable
@@ -46,7 +46,7 @@ sudo chmod +x install.sh
 4. Run the install script
 
 ```shell
-sudo ./install.sh
+./install.sh
 ```
 
 ## Testing
