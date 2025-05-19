@@ -26,7 +26,6 @@ SPACESHIP_PROMPT_ORDER=(
 )
 SPACESHIP_USER_SHOW=always
 SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
 
 plugins=(
@@ -53,3 +52,26 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# VSCode
+export VSCODE_HOME="/usr/share/code"
+case ":$PATH:" in
+*":$VSCODE_HOME:"*) ;;
+*) export PATH="$VSCODE_HOME:$PATH" ;;
+esac
+# VSCode end
+
+# Cursor
+function cursor() {
+    $HOME/Applications/Cursor.AppImage --no-sandbox "${@}" > /dev/null 2>&1 & disown
+}
+
+# Cursor end
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/worgho2/.cache/lm-studio/bin"
+
+alias yt-dl='docker run --rm -i -e PGID=$(id -g) -e PUID=$(id -u) -v "$(pwd)":/workdir:rw mikenye/youtube-dl'
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
