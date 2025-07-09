@@ -51,27 +51,24 @@ case ":$PATH:" in
 *":$PNPM_HOME:"*) ;;
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
 
-# VSCode
-export VSCODE_HOME="/usr/share/code"
-case ":$PATH:" in
-*":$VSCODE_HOME:"*) ;;
-*) export PATH="$VSCODE_HOME:$PATH" ;;
-esac
-# VSCode end
-
-# Cursor
-function cursor() {
-    $HOME/Applications/Cursor.AppImage --no-sandbox "${@}" > /dev/null 2>&1 & disown
-}
-
-# Cursor end
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/home/worgho2/.cache/lm-studio/bin"
 
-alias yt-dl='docker run --rm -i -e PGID=$(id -g) -e PUID=$(id -u) -v "$(pwd)":/workdir:rw mikenye/youtube-dl'
-
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
+
+# Aliases
+
+function cursor() {
+  $HOME/Applications/Cursor.AppImage --no-sandbox "${@}" >/dev/null 2>&1 &
+  disown
+}
+
+alias claude="/home/worgho2/.claude/local/claude"
+alias yt-dl='docker run --rm -i -e PGID=$(id -g) -e PUID=$(id -u) -v "$(pwd)":/workdir:rw mikenye/youtube-dl'
