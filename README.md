@@ -15,6 +15,7 @@ This repository is specifically designed for **Kubuntu 24.04** running **KDE Pla
 - pnpm
 - zoxide
 - kde plasma en.intl keyboard layout with mac-like shortcuts
+- wireplumber bluetooth configs (force A2DP, disable auto-switch to headset)
 
 ## Installation
 

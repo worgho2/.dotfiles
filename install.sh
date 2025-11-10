@@ -59,6 +59,10 @@ sync_config_file $DOTFILES_DIR/src/.config/kglobalshortcutsrc $HOME/.config/kglo
 log INFO "Syncing keyboard shortcuts..."
 sync_config_file $DOTFILES_DIR/src/.config/kxkbrc $HOME/.config/kxkbrc
 
+log INFO "Syncing wireplumber configs..."
+sync_config_file $DOTFILES_DIR/src/.config/wireplumber/bluetooth.lua.d/51-force-a2dp.lua $HOME/.config/wireplumber/bluetooth.lua.d/51-force-a2dp.lua
+sync_config_file $DOTFILES_DIR/src/.config/wireplumber/policy.lua.d/99-disable-headset-autoswitch.lua $HOME/.config/wireplumber/policy.lua.d/99-disable-headset-autoswitch.lua
+
 # Add cedilla to en keyboard layout
 log INFO "Adding cedilla to en keyboard layout..."
 if [ "$GTK_IM_MODULE" != "cedilla" ]; then
